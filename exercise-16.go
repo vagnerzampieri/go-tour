@@ -13,7 +13,8 @@ func needFloat(x float64) float64 {
 }
 
 func main() {
-	fmt.Println(needInt(Small))
-	fmt.Println(needFloat(Small))
-	fmt.Println(needFloat(Big))
+	fmt.Printf("Small -> %v\n", Small)
+	fmt.Printf("Small needInt -> %v\n", needInt(Small))
+	fmt.Printf("Small needFloat -> %v\n", needFloat(Small))
+	fmt.Printf("Small needFloat -> %v\n", needFloat(Big))
 }
