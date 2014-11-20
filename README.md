@@ -8,6 +8,6 @@
 
 ####Run tests
 
-	cd mathematics/
+	cd exercise-7/mathematics/
 	go test
 
