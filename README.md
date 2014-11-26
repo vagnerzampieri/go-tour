@@ -11,6 +11,6 @@
 	cd exercise-7/mathematics/
 	go test
 
-###Go get
+####Go get
 
     go get code.google.com/p/go-tour/wc
