@@ -22,8 +22,10 @@ func (s Struct) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	var s Struct
-	var str String
+	var (
+		s   Struct
+		str String
+	)
 
 	http.Handle("/string", str)
 	http.Handle("/struct", s)
