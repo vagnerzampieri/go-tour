@@ -1,6 +1,6 @@
 ####Dependencies
 
-        go get github.com/stretchr/testify
+    go get github.com/stretchr/testify
 
 ####Run exercises
 
