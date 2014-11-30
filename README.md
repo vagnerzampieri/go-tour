@@ -18,7 +18,6 @@
 ####Exercise with HTTP and expose port
 
     $ sudo docker ps
-    [sudo] password for zampieri:
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     ef4c64eb792b        go:latest           "/bin/bash"         19 hours ago        Up 19 hours                             naughty_kirch
 
