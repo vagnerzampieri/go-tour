@@ -6,16 +6,16 @@ import (
 )
 
 func main() {
-	c, err := redis.Dial("tcp", ":6379")
+	connect, err := redis.Dial("tcp", ":6379")
 	if err != nil {
 		panic(err)
 	}
 
-	defer c.Close()
+	defer connect.Close()
 
-	c.Do("SET", "message1", "Hello World")
+	connect.Do("SET", "message1", "Hello World")
 
-	world, err := redis.String(c.Do("GET", "message1"))
+	world, err := redis.String(connect.Do("GET", "message1"))
 	if err != nil {
 		fmt.Println("key not found")
 	}
