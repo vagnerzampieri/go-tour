@@ -6,7 +6,7 @@ import (
 )
 
 type Connect struct {
-	c redis.Conn
+	Conn redis.Conn
 }
 
 var (
@@ -15,7 +15,7 @@ var (
 
 func init() {
 	var err error
-	connect.c, err = redis.Dial("tcp", ":6379")
+	connect.Conn, err = redis.Dial("tcp", ":6379")
 
 	if err != nil {
 		panic(err)
@@ -23,11 +23,11 @@ func init() {
 }
 
 func main() {
-	defer connect.c.Close()
+	defer connect.Conn.Close()
 
-	connect.c.Do("SET", "message1", "Hello World")
+	connect.Conn.Do("SET", "message1", "Hello World")
 
-	world, err := redis.String(connect.c.Do("GET", "message1"))
+	world, err := redis.String(connect.Conn.Do("GET", "message1"))
 	if err != nil {
 		fmt.Println("key not found")
 	}
