@@ -36,9 +36,6 @@ func validArgs() {
 }
 
 func destinyMeasurement() (str string) {
-	fmt.Println("originMeasurement := os.Args[len(os.Args)-1]", originMeasurement)
-	fmt.Println("originValues := os.Args[1 : len(os.Args)-1]", originValues)
-
 	if originMeasurement == "celsius" {
 		str = "fahrenheit"
 	} else if originMeasurement == "kilometre" {
@@ -51,10 +48,24 @@ func destinyMeasurement() (str string) {
 	return
 }
 
+func calculateCelsius(originValue float64) float64 {
+	return originValue*1.8 + 32
+}
+
+func calculateKilometre(originValue float64) float64 {
+	return originValue / 1.60934
+}
+
+func destinyValue(originValue float64) (destinyValue float64) {
+	if originMeasurement == "celsius" {
+		destinyValue = calculateCelsius(originValue)
+	} else {
+		destinyValue = calculateKilometre(originValue)
+	}
+	return
+}
+
 func main() {
-	//fmt.Println("len(os.Args) ->", len(os.Args))
-	//fmt.Println("os.Args ->", os.Args)
-	//fmt.Println("os.Args[0] ->", os.Args[0])
 	for i, v := range originValues {
 		originValue, err := strconv.ParseFloat(v, 64)
 
@@ -63,15 +74,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		var destinyValue float64
-
-		if originMeasurement == "celsius" {
-			destinyValue = originValue*1.8 + 32
-		} else {
-			destinyValue = originValue / 1.60934
-		}
-
 		fmt.Printf("%.2f %s = %.2f %s\n",
-			originValue, originMeasurement, destinyValue, destinyMeasurement())
+			originValue, originMeasurement, destinyValue(originValue), destinyMeasurement())
 	}
 }
