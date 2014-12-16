@@ -4,13 +4,14 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 var (
 	value             *float64
 	measurement       *string
 	lenArgs           int
-	originValue       []string
+	originValues      []string
 	originMeasurement string
 )
 
@@ -22,7 +23,7 @@ func init() {
 	validArgs()
 
 	originMeasurement = os.Args[lenArgs-1]
-	originValue = os.Args[1 : lenArgs-1]
+	originValues = os.Args[1 : lenArgs-1]
 }
 
 func validArgs() {
@@ -36,7 +37,7 @@ func validArgs() {
 
 func destinyMeasurement() (str string) {
 	fmt.Println("originMeasurement := os.Args[len(os.Args)-1]", originMeasurement)
-	fmt.Println("originValue := os.Args[1 : len(os.Args)-1]", originValue)
+	fmt.Println("originValues := os.Args[1 : len(os.Args)-1]", originValues)
 
 	if originMeasurement == "celsius" {
 		str = "fahrenheit"
@@ -54,5 +55,23 @@ func main() {
 	//fmt.Println("len(os.Args) ->", len(os.Args))
 	//fmt.Println("os.Args ->", os.Args)
 	//fmt.Println("os.Args[0] ->", os.Args[0])
-	destinyMeasurement()
+	for i, v := range originValues {
+		originValue, err := strconv.ParseFloat(v, 64)
+
+		if err != nil {
+			fmt.Printf("The value %s in position %d is not a valid number!\n", v, i)
+			os.Exit(1)
+		}
+
+		var destinyValue float64
+
+		if originMeasurement == "celsius" {
+			destinyValue = originValue*1.8 + 32
+		} else {
+			destinyValue = originValue / 1.60934
+		}
+
+		fmt.Printf("%.2f %s = %.2f %s\n",
+			originValue, originMeasurement, destinyValue, destinyMeasurement())
+	}
 }
