@@ -33,4 +33,16 @@ func main() {
 
 	fmt.Println("originMeasurement := os.Args[len(os.Args)-1]", originMeasurement)
 	fmt.Println("originValue := os.Args[1 : len(os.Args)-1]", originValue)
+
+	var destinyMeasurement string
+
+	if originMeasurement == "celsius" {
+		destinyMeasurement = "fahrenheit"
+	} else if originMeasurement == "kilometre" {
+		destinyMeasurement = "miles"
+	} else {
+		destinyMeasurement = originMeasurement
+		fmt.Printf("%s is not a unit of measurement known!\n", destinyMeasurement)
+		os.Exit(1)
+	}
 }
