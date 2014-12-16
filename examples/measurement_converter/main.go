@@ -21,14 +21,15 @@ func main() {
 	//fmt.Println("len(os.Args) ->", len(os.Args))
 	//fmt.Println("os.Args ->", os.Args)
 	//fmt.Println("os.Args[0] ->", os.Args[0])
+	lenArgs := len(os.Args)
 
-	if len(os.Args) < 3 {
+	if lenArgs < 3 {
 		fmt.Println("Use: converter <value> <measurement>")
 		os.Exit(1)
 	}
 
-	originMeasurement := os.Args[len(os.Args)-1]
-	originValue := os.Args[1 : len(os.Args)-1]
+	originMeasurement := os.Args[lenArgs-1]
+	originValue := os.Args[1 : lenArgs-1]
 
 	fmt.Println("originMeasurement := os.Args[len(os.Args)-1]", originMeasurement)
 	fmt.Println("originValue := os.Args[1 : len(os.Args)-1]", originValue)
