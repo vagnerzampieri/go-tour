@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/vagnerzampieri/go-tour/tree/master/examples/measurement_converter/converter"
+	"github.com/vagnerzampieri/go-tour/examples/measurement_converter/converter"
 )
 
 var (
