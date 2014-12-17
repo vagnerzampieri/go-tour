@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/vagnerzampieri/go-tour/tree/master/examples/measurement_converter/converter"
 )
 
 var (
@@ -48,19 +50,11 @@ func destinyMeasurement() (str string) {
 	return
 }
 
-func calculateCelsius(originValue float64) float64 {
-	return originValue*1.8 + 32
-}
-
-func calculateKilometre(originValue float64) float64 {
-	return originValue / 1.60934
-}
-
 func destinyValue(originValue float64) (destinyValue float64) {
 	if originMeasurement == "celsius" {
-		destinyValue = calculateCelsius(originValue)
+		destinyValue = converter.Celsius(originValue)
 	} else {
-		destinyValue = calculateKilometre(originValue)
+		destinyValue = converter.Kilometre(originValue)
 	}
 	return
 }
