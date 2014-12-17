@@ -1,3 +1,4 @@
+//go run main.go 10.08 celsius
 package main
 
 import (
