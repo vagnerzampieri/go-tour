@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 var (
@@ -31,10 +32,34 @@ func errorArgs() {
 	}
 }
 
+func errorOnlyNumbers(err error) {
+	if err != nil {
+		fmt.Println("Only numbers")
+		os.Exit(1)
+	}
+}
+
 func removeMidleValue() (chosen string, newSlice []string) {
 	indexNumber := (lenNumbers / 2)
 	chosen = numbers[indexNumber]
 	newSlice = append(numbers[:indexNumber], numbers[indexNumber+1:]...)
+	return
+}
+
+func partition(chosen string, slice []string) (lower, higher []int) {
+	c, err := strconv.Atoi(chosen)
+	errorOnlyNumbers(err)
+
+	for _, n := range slice {
+		cho, errors := strconv.Atoi(n)
+		errorOnlyNumbers(errors)
+
+		if cho < c {
+			lower = append(lower, cho)
+		} else if cho >= c {
+			higher = append(higher, cho)
+		}
+	}
 	return
 }
 
@@ -43,10 +68,13 @@ func main() {
 	fmt.Println("len numbers", lenNumbers)
 	fmt.Println("numbers[0]", numbers[0])
 
-	// tenho que dividir o slice, e pegar o valor do meio, tem que tomar cuidado quando for impar e par
 	chosen, newSlice := removeMidleValue()
 	fmt.Println("chosen", chosen)
 	fmt.Println("newSlice", newSlice)
+
+	lower, higher := partition(chosen, newSlice)
+	fmt.Println("lower", lower)
+	fmt.Println("higher", higher)
 
 	for i, n := range numbers {
 		fmt.Println(i, n)
