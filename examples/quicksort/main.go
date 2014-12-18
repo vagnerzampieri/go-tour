@@ -37,8 +37,10 @@ func main() {
 	fmt.Println("numbers[0]", numbers[0])
 
 	// tenho que dividir o slice, e pegar o valor do meio, tem que tomar cuidado quando for impar e par
-	fmt.Println("divisão", (lenNumbers / 2))
-	fmt.Println("meio", numbers[(lenNumbers/2)])
+	indexNumber := (lenNumbers / 2)
+	chosen := numbers[indexNumber]
+	fmt.Println("indexNumber", indexNumber)
+	fmt.Println("chosen", chosen)
 
 	for i, n := range numbers {
 		fmt.Println(i, n)
