@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"os"
 )
 
 var numbers []string
@@ -14,6 +13,6 @@ func init() {
 }
 
 func main() {
-	numbers = os.Args
+	numbers = flag.Args()
 	fmt.Println("numbers", numbers)
 }
