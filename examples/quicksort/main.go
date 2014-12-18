@@ -2,13 +2,18 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"os"
 )
 
-var numbers *int
+var numbers []string
 
 func init() {
-	numbers = flag.Int("numbers", 10, "Adding integers to create slice")
+	flag.Int("numbers", 10, "Add numbers to be sorted")
 	flag.Parse()
 }
 
-func main() {}
+func main() {
+	numbers = os.Args
+	fmt.Println("numbers", numbers)
+}
