@@ -39,10 +39,16 @@ func main() {
 	// tenho que dividir o slice, e pegar o valor do meio, tem que tomar cuidado quando for impar e par
 	indexNumber := (lenNumbers / 2)
 	chosen := numbers[indexNumber]
+	newSlice := []string{}
+
 	fmt.Println("indexNumber", indexNumber)
 	fmt.Println("chosen", chosen)
 
-	for i, n := range numbers {
+	newSlice = append(numbers[:indexNumber], numbers[indexNumber+1:]...)
+
+	fmt.Println("newSlice", newSlice)
+
+	for i, n := range newSlice {
 		fmt.Println(i, n)
 	}
 }
