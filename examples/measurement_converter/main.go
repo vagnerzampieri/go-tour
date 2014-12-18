@@ -1,4 +1,6 @@
-//go run main.go 10.08 celsius
+// Use:
+// go run main.go -h -> help
+// go run main.go 10.08 celsius
 package main
 
 import (
