@@ -16,4 +16,5 @@ func main() {
 	numbers = flag.Args()
 	fmt.Println("numbers", numbers)
 	fmt.Println("len numbers", len(numbers))
+	fmt.Println("numbers[0]", numbers[0])
 }

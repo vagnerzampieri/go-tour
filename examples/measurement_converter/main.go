@@ -13,28 +13,27 @@ import (
 )
 
 var (
-	value             *float64
-	measurement       *string
 	lenArgs           int
 	originValues      []string
 	originMeasurement string
 )
 
 func init() {
-	value = flag.Float64("value", 10.07, "Adding value to converter")
-	measurement = flag.String("measurement", "celsius or fahrenheit", "Adding conversor")
+	flag.Float64("value", 10.07, "Adding value to converter")
+	flag.String("measurement", "celsius or fahrenheit", "Adding conversor")
 	flag.Parse()
+
+	lenArgs = len(flag.Args())
+	lastArg := len(flag.Args()) - 1
 
 	validArgs()
 
-	originMeasurement = os.Args[lenArgs-1]
-	originValues = os.Args[1 : lenArgs-1]
+	originMeasurement = flag.Args()[lastArg]
+	originValues = flag.Args()[0:lastArg]
 }
 
 func validArgs() {
-	lenArgs = len(os.Args)
-
-	if lenArgs < 3 {
+	if lenArgs < 2 {
 		fmt.Println("Use: converter <value> <measurement>")
 		os.Exit(1)
 	}
