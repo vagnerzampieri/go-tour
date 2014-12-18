@@ -31,24 +31,24 @@ func errorArgs() {
 	}
 }
 
+func removeMidleValue() (chosen string, newSlice []string) {
+	indexNumber := (lenNumbers / 2)
+	chosen = numbers[indexNumber]
+	newSlice = append(numbers[:indexNumber], numbers[indexNumber+1:]...)
+	return
+}
+
 func main() {
 	fmt.Println("numbers", numbers)
 	fmt.Println("len numbers", lenNumbers)
 	fmt.Println("numbers[0]", numbers[0])
 
 	// tenho que dividir o slice, e pegar o valor do meio, tem que tomar cuidado quando for impar e par
-	indexNumber := (lenNumbers / 2)
-	chosen := numbers[indexNumber]
-	newSlice := []string{}
-
-	fmt.Println("indexNumber", indexNumber)
+	chosen, newSlice := removeMidleValue()
 	fmt.Println("chosen", chosen)
-
-	newSlice = append(numbers[:indexNumber], numbers[indexNumber+1:]...)
-
 	fmt.Println("newSlice", newSlice)
 
-	for i, n := range newSlice {
+	for i, n := range numbers {
 		fmt.Println(i, n)
 	}
 }
