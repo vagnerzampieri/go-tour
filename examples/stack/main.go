@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -31,4 +32,13 @@ func (stack Stack) Empty() bool {
 
 func (stack *Stack) Add(value interface{}) {
 	stack.values = append(stack.values, value)
+}
+
+func (stack *Stack) Delete() (interface{}, error) {
+	if stack.Empty() {
+		return nil, errors.New("Stack empty!")
+	}
+	value := stack.values[stack.Length()-1]
+	stack.values = stack.values[:stack.Length()-1]
+	return value, nil
 }
