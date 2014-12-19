@@ -7,23 +7,18 @@ import (
 	"strconv"
 )
 
-var (
-	numbers    []string
-	lenNumbers int
-)
+var numbers []string
 
 func init() {
 	flag.Int("numbers", 10, "Add numbers to be sorted")
 	flag.Parse()
 
 	numbers = flag.Args()
-	lenNumbers = len(numbers)
-
-	errorArgs()
+	errorArgs(len(numbers))
 }
 
-func errorArgs() {
-	if lenNumbers == 0 {
+func errorArgs(length int) {
+	if length == 0 {
 		fmt.Println("Need numbers as arguments.\nEx.: go run main.go 1 2 3")
 		os.Exit(1)
 	}
@@ -65,7 +60,7 @@ func partition(chosen int, slice []int) (lower, higher []int) {
 }
 
 func main() {
-	nums := make([]int, lenNumbers)
+	nums := make([]int, len(numbers))
 
 	for i, n := range numbers {
 		number, err := strconv.Atoi(n)
