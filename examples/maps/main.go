@@ -17,6 +17,16 @@ func init() {
 	words = flag.Args()
 }
 
+func mappingWords() map[string]int {
+	mapping := make(map[string]int)
+
+	for _, str := range words {
+		mapping[str] += 1
+	}
+	return mapping
+}
+
 func main() {
 	fmt.Println("words ->", words)
+	fmt.Println("mappingWords() ->", mappingWords())
 }
