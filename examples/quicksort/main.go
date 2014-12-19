@@ -26,9 +26,6 @@ func errorArgs() {
 	if lenNumbers == 0 {
 		fmt.Println("Need numbers as arguments.\nEx.: go run main.go 1 2 3")
 		os.Exit(1)
-	} else if lenNumbers == 1 {
-		fmt.Println("Returns himself", numbers)
-		os.Exit(1)
 	}
 }
 
@@ -39,44 +36,41 @@ func errorOnlyNumbers(err error) {
 	}
 }
 
-func removeMidleValue() (chosen string, newSlice []string) {
-	indexNumber := (lenNumbers / 2)
-	chosen = numbers[indexNumber]
-	newSlice = append(numbers[:indexNumber], numbers[indexNumber+1:]...)
-	return
+func quicksort(numbers []int) []int {
+	if len(numbers) <= 1 {
+		return numbers
+	}
+
+	nums := make([]int, len(numbers))
+	copy(nums, numbers)
+
+	indexNumber := (len(nums) / 2)
+	chosen := nums[indexNumber]
+	nums = append(nums[:indexNumber], nums[indexNumber+1:]...)
+
+	lower, higher := partition(chosen, nums)
+
+	return append(append(quicksort(lower), chosen), quicksort(higher)...)
 }
 
-func partition(chosen string, slice []string) (lower, higher []int) {
-	c, err := strconv.Atoi(chosen)
-	errorOnlyNumbers(err)
-
+func partition(chosen int, slice []int) (lower, higher []int) {
 	for _, n := range slice {
-		cho, errors := strconv.Atoi(n)
-		errorOnlyNumbers(errors)
-
-		if cho < c {
-			lower = append(lower, cho)
-		} else if cho >= c {
-			higher = append(higher, cho)
+		if n <= chosen {
+			lower = append(lower, n)
+		} else {
+			higher = append(higher, n)
 		}
 	}
 	return
 }
 
 func main() {
-	fmt.Println("numbers", numbers)
-	fmt.Println("len numbers", lenNumbers)
-	fmt.Println("numbers[0]", numbers[0])
-
-	chosen, newSlice := removeMidleValue()
-	fmt.Println("chosen", chosen)
-	fmt.Println("newSlice", newSlice)
-
-	lower, higher := partition(chosen, newSlice)
-	fmt.Println("lower", lower)
-	fmt.Println("higher", higher)
+	nums := make([]int, lenNumbers)
 
 	for i, n := range numbers {
-		fmt.Println(i, n)
+		number, err := strconv.Atoi(n)
+		errorOnlyNumbers(err)
+		nums[i] = number
 	}
+	fmt.Println(quicksort(nums))
 }
