@@ -6,6 +6,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strings"
 )
 
 var words []string
@@ -21,7 +22,7 @@ func mappingWords() map[string]int {
 	mapping := make(map[string]int)
 
 	for _, str := range words {
-		mapping[str] += 1
+		mapping[strings.ToLower(string(str[0]))] += 1
 	}
 	return mapping
 }
