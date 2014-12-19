@@ -64,5 +64,6 @@ func main() {
 		errorOnlyNumbers(err)
 		nums[i] = number
 	}
+	fmt.Println(numbers)
 	fmt.Println(quicksort(nums))
 }
