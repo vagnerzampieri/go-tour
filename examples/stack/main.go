@@ -16,6 +16,18 @@ func main() {
 	stack.Add("End")
 	fmt.Println("Length after 4 values:", stack.Length())
 	fmt.Println("Empty?", stack.Empty())
+
+	for !stack.Empty() {
+		v, _ := stack.Delete()
+		fmt.Println("Deleting", v)
+		fmt.Println("Length:", stack.Length())
+		fmt.Println("Empty?", stack.Empty())
+	}
+
+	_, err := stack.Delete()
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
 }
 
 type Stack struct {
