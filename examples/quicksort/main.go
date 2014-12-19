@@ -36,14 +36,11 @@ func quicksort(numbers []int) []int {
 		return numbers
 	}
 
-	nums := make([]int, len(numbers))
-	copy(nums, numbers)
+	indexNumber := (len(numbers) / 2)
+	chosen := numbers[indexNumber]
+	numbers = append(numbers[:indexNumber], numbers[indexNumber+1:]...)
 
-	indexNumber := (len(nums) / 2)
-	chosen := nums[indexNumber]
-	nums = append(nums[:indexNumber], nums[indexNumber+1:]...)
-
-	lower, higher := partition(chosen, nums)
+	lower, higher := partition(chosen, numbers)
 
 	return append(append(quicksort(lower), chosen), quicksort(higher)...)
 }
