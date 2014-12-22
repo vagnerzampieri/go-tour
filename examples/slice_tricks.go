@@ -33,4 +33,7 @@ func main() {
 	var s []int
 	names := []string{}
 	fmt.Println(s, names)
+
+	t := make([]int, 10)
+	fmt.Println(t, len(t), cap(t))
 }
