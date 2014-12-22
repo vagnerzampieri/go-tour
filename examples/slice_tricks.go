@@ -36,4 +36,7 @@ func main() {
 
 	t := make([]int, 10)
 	fmt.Println(t, len(t), cap(t))
+
+	u := make([]int, 10, 20)
+	fmt.Println(u, len(u), cap(u))
 }
