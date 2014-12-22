@@ -29,4 +29,8 @@ func main() {
 	c = append(c, f...)
 
 	fmt.Println("append(c, e...) append(c, f...) ->", c)
+
+	var s []int
+	names := []string{}
+	fmt.Println(s, names)
 }
