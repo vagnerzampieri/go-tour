@@ -19,6 +19,8 @@ func main() {
 	// nil para ponteiros, funcoes, interfaces, slices, maps e channels
 
 	var multiA [2][2]int
+	fmt.Println("Multi:", multiA)
+
 	multiA[0][0], multiA[0][1] = 3, 5
 	multiA[1][0], multiA[1][1] = 7, -2
 
