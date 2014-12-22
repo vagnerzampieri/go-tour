@@ -9,6 +9,7 @@ func main() {
 	names := [2]string{}
 
 	fmt.Println(a, numbers, prime, names)
+	fmt.Println(len(a), len(numbers), len(prime), len(names))
 
 	// Valor inicial varia de acordo com o tipo de dado definido para o array
 	// false para valores do tipo bool
