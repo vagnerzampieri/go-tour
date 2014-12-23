@@ -22,4 +22,7 @@ func main() {
 	fmt.Println("Capitals ->", capitals)
 	fmt.Println("RJ ->", capitals["RJ"])
 
+	capitals["AM"] = "Manaus"
+
+	fmt.Println("Capitals ->", capitals)
 }
