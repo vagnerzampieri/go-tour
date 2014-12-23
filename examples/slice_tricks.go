@@ -39,4 +39,15 @@ func main() {
 
 	u := make([]int, 10, 20)
 	fmt.Println(u, len(u), cap(u))
+
+	original := []int{1, 2, 3, 4, 5}
+	fmt.Println("Original:", original)
+
+	newSlice := original[1:3]
+	fmt.Println("Novo:", newSlice)
+
+	original[2] = 13
+
+	fmt.Println("Original pos modificacao:", original)
+	fmt.Println("Novo pos modificacao:", newSlice)
 }
