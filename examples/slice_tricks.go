@@ -50,4 +50,10 @@ func main() {
 
 	fmt.Println("Original pos modificacao:", original)
 	fmt.Println("Novo pos modificacao:", newSlice)
+
+	fmt.Println("Capacidade original:", cap(original))
+	fmt.Println("Capacidade modificado:", cap(newSlice))
+
+	fmt.Println("Tamanho original:", len(original))
+	fmt.Println("Tamanho modificado:", len(newSlice))
 }
