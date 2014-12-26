@@ -4,8 +4,7 @@ import "fmt"
 
 type WishList []string
 
-func (list WishList) Categorize() ([]string, []string, []string) {
-	vegetables, meat, other := []string{}, []string{}, []string{}
+func (list WishList) Categorize() (vegetables, meat, other []string) {
 	for _, e := range list {
 		switch e {
 		case "Alface", "Pepino":
@@ -16,7 +15,7 @@ func (list WishList) Categorize() ([]string, []string, []string) {
 			other = append(other, e)
 		}
 	}
-	return vegetables, meat, other
+	return
 }
 
 func main() {
