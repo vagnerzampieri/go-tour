@@ -12,13 +12,19 @@ func main() {
 		squares[n] = n * n
 	}
 
+	fmt.Println("squares ->", squares)
+
 	numbers := make([]int, 0, len(squares))
 
 	for n := range squares {
 		numbers = append(numbers, n)
 	}
 
+	fmt.Println("numbers ->", numbers)
+
 	sort.Ints(numbers)
+
+	fmt.Println("sorted numbers ->", numbers)
 
 	for _, number := range numbers {
 		square := squares[number]
