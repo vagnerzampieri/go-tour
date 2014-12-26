@@ -18,4 +18,5 @@ func main() {
 	fmt.Println("GO name ->", states["GO"].name)
 	fmt.Println("GO population ->", states["GO"].population)
 	fmt.Println("GO capital ->", states["GO"].capital)
+	fmt.Println("SP ->", states["SP"])
 }
