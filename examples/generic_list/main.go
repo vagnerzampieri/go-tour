@@ -21,4 +21,8 @@ func main() {
 	}
 
 	fmt.Printf("Lista:\n%v\n\n", list)
+
+	fmt.Printf(
+		"Removendo do inicio: %v, apos remocao:\n%v\n\n",
+		list.RemoveFirst(), list)
 }
