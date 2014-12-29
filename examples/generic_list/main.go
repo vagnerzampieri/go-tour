@@ -33,4 +33,8 @@ func main() {
 	fmt.Printf(
 		"Removendo do fim: %v, apos remocao:\n%v\n\n",
 		list.RemoveLast(), list)
+
+	fmt.Printf(
+		"Removendo do indice 3: %v, apos remocao:\n%v\n\n",
+		list.RemoveIndex(2), list)
 }
