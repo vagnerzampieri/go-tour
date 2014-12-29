@@ -11,6 +11,10 @@ func (list *GenericList) RemoveIndex(index int) interface{} {
 	return remove
 }
 
+func (list *GenericList) RemoveFirst() interface{} {
+	return list.RemoveIndex(0)
+}
+
 func main() {
 	list := GenericList{
 		"Anaheim Ducks", 42, true, 9, "New Orleans Saints", 3.14,
