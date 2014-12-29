@@ -10,3 +10,11 @@ func (list *GenericList) RemoveIndex(index int) interface{} {
 	*list = append(l[0:index], l[index+1:]...)
 	return remove
 }
+
+func main() {
+	list := GenericList{
+		"Anaheim Ducks", 42, true, 9, "New Orleans Saints", 3.14,
+	}
+
+	fmt.Printf("Lista:\n%v\n\n", list)
+}
