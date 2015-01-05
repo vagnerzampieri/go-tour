@@ -14,6 +14,10 @@ func (file *File) AverageWordSize() float64 {
 	return float64(file.caracters) / float64(file.words)
 }
 
+func (file *File) AverageWordPerLine() float64 {
+	return float64(file.words) / float64(file.lines)
+}
+
 func main() {
 	file := File{"artigo.txt", 12.68, 12986, 1862, 220}
 	fmt.Println(file)
@@ -27,4 +31,7 @@ func main() {
 
 	fmt.Printf("Average words size: %.2f\n",
 		file.AverageWordSize())
+
+	fmt.Printf("Average words per line: %.2f\n",
+		file.AverageWordPerLine())
 }
