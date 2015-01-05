@@ -10,6 +10,10 @@ type File struct {
 	lines     int
 }
 
+func (file *File) AverageWordSize() float64 {
+	return float64(file.caracters) / float64(file.words)
+}
+
 func main() {
 	file := File{"artigo.txt", 12.68, 12986, 1862, 220}
 	fmt.Println(file)
@@ -20,4 +24,7 @@ func main() {
 
 	stackFile.length = 17.47
 	fmt.Printf("after: %s\t%.2fKB\n", stackFile.name, stackFile.length)
+
+	fmt.Printf("Average words size: %.2f\n",
+		file.AverageWordSize())
 }
