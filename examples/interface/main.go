@@ -30,6 +30,16 @@ func (s Subtraction) String() string {
 	return fmt.Sprintf("%d - %d =", s.value1, s.value2)
 }
 
+func accumulate(operations []Operation) (accumulator int) {
+	for _, op := range operations {
+		value := op.Calc()
+		fmt.Printf("%v %d\n", op, value)
+		accumulator += value
+	}
+
+	return
+}
+
 func main() {
 	var sum Operation
 	fmt.Println("sum ->", sum)
@@ -45,13 +55,5 @@ func main() {
 	operations[2] = Subtraction{10, 50}
 	operations[3] = Sum{5, 2}
 
-	accumulator := 0
-
-	for _, op := range operations {
-		value := op.Calc()
-		fmt.Printf("%v %d\n", op, value)
-		accumulator += value
-	}
-
-	fmt.Println("Valor acumulado =", accumulator)
+	fmt.Println("Valor acumulado =", accumulate(operations))
 }
