@@ -15,9 +15,15 @@ func (s Sum) Calc() int {
 }
 
 func (s Sum) String() string {
-	return fmt.Sprintf("%d + %d ->", s.value1, s.value2)
+	return fmt.Sprintf("%d + %d =", s.value1, s.value2)
 }
 
 func main() {
+	var sum Operation
+	fmt.Println("sum ->", sum)
 
+	sum = Sum{10, 20}
+	fmt.Println("sum = Sum{10, 20} ->", sum)
+
+	fmt.Printf("%v %d\n", sum, sum.Calc())
 }
