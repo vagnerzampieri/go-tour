@@ -26,6 +26,10 @@ func (s Subtraction) Calc() int {
 	return s.value1 - s.value2
 }
 
+func (s Subtraction) String() string {
+	return fmt.Sprintf("%d - %d =", s.value1, s.value2)
+}
+
 func main() {
 	var sum Operation
 	fmt.Println("sum ->", sum)
