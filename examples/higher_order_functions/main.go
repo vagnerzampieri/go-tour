@@ -30,4 +30,7 @@ func Timer(f func()) {
 }
 
 func main() {
+	Timer(GenerateFibonacci(8))
+	Timer(GenerateFibonacci(48))
+	Timer(GenerateFibonacci(88))
 }
