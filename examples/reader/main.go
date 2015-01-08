@@ -23,4 +23,7 @@ func readString(r io.Reader) string {
 }
 
 func main() {
+	reader := ReaderStrings{}
+	fmt.Println(reader)
+	fmt.Println(readString(reader))
 }
