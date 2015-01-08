@@ -20,5 +20,14 @@ func GenerateFibonacci(n int) func() {
 	}
 }
 
+func Timer(f func()) {
+	start := time.Now()
+
+	f()
+
+	fmt.Printf("\nTempo de execução: %s\n\n",
+		time.Since(start))
+}
+
 func main() {
 }
