@@ -16,5 +16,11 @@ func (r ReaderStrings) Read(p []byte) (int, error) {
 	return len(p), nil
 }
 
+func readString(r io.Reader) string {
+	p := make([]byte, 4)
+	r.Read(p)
+	return string(p)
+}
+
 func main() {
 }
