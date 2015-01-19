@@ -29,5 +29,8 @@ func CalcProduct(values []int) int {
 }
 
 func main() {
+	values := []int{3, -2, 5, 7, 8, 22, 32, -1}
 
+	fmt.Println(CalcSum(values))
+	fmt.Println(CalcProduct(values))
 }
