@@ -20,6 +20,14 @@ func CalcSum(values []int) int {
 	return Aggregate(values, 0, sum)
 }
 
+func CalcProduct(values []int) int {
+	mult := func(n, m int) int {
+		return n * m
+	}
+
+	return Aggregate(values, 1, mult)
+}
+
 func main() {
 
 }
