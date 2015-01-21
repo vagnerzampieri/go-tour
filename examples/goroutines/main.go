@@ -14,6 +14,6 @@ func printTime(n int) {
 }
 
 func main() {
-	printTime(2)
+	go printTime(2)
 	printTime(3)
 }
