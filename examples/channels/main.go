@@ -8,6 +8,8 @@ func add(c chan int) {
 
 func main() {
 	c := make(chan int)
+	fmt.Println("channel ->", c)
+
 	go add(c)
 
 	value := <-c
