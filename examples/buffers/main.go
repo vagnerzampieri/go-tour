@@ -13,6 +13,14 @@ func add(c chan int) {
 func main() {
 	c := make(chan int, 3)
 	go add(c)
+	fmt.Println("channel ->", c)
 
-	fmt.Println(<-c, <-c, <-c, <-c)
+	for {
+		value, ok := <-c
+		if ok {
+			fmt.Println(value)
+		} else {
+			break
+		}
+	}
 }
