@@ -15,12 +15,7 @@ func main() {
 	go add(c)
 	fmt.Println("channel ->", c)
 
-	for {
-		value, ok := <-c
-		if ok {
-			fmt.Println(value)
-		} else {
-			break
-		}
+	for value := range c {
+		fmt.Println(value)
 	}
 }
