@@ -1,48 +1,49 @@
-Abacate,Flatulento 
-Acelga,Flatulento 
-Açúcar,Flatulento 
-Agrião,Flatulento 
-Águas Gasosas,Flatulento 
-Alho,Flatulento 
-Amêndoa,Flatulento 
-Amendoim,Flatulento 
-Batata Doce,Flatulento 
-Beterraba,Flatulento 
-Brócolis,Flatulento 
-Castanha,Flatulento 
-Cebola,Flatulento 
-Cebolinha,Flatulento 
-Coalhada,Flatulento 
-Couve,Flatulento 
-Couve-flor,Flatulento 
-Churcute,Flatulento 
-Doces,Flatulento 
-Feijão Seco,Flatulento 
-Fava,Flatulento 
-Gérmem de trigo,Flatulento 
-Grão de Bico,Flatulento 
-Iogurte,Flatulento 
-Jaca,Flatulento 
-Leite,Flatulento 
-Lentilha,Flatulento 
-Maçã crua,Flatulento 
-Melão,Flatulento 
-Melancia,Flatulento 
-Mostarda,Flatulento 
-Milho,Flatulento 
-Nabo,Flatulento 
-Nozes,Flatulento 
-Ovo,Flatulento 
-Pepino,Flatulento 
-Pimentão,Flatulento 
+name,type
+Abacate,Flatulento
+Acelga,Flatulento
+Açúcar,Flatulento
+Agrião,Flatulento
+Águas Gasosas,Flatulento
+Alho,Flatulento
+Amêndoas,Flatulento
+Amendoim,Flatulento
+Batata Doce,Flatulento
+Beterraba,Flatulento
+Brócolis,Flatulento
+Castanhas,Flatulento
+Cebola,Flatulento
+Cebolinha,Flatulento
+Coalhada,Flatulento
+Couve,Flatulento
+Couve-flor,Flatulento
+Churcute,Flatulento
+Doces,Flatulento
+Feijão Seco,Flatulento
+Fava,Flatulento
+Gérmem de trigo,Flatulento
+Grão de Bico,Flatulento
+Iogurte,Flatulento
+Jaca,Flatulento
+Leite,Flatulento
+Lentilha,Flatulento
+Maçã crua,Flatulento
+Melão,Flatulento
+Melancia,Flatulento
+Mostarda,Flatulento
+Milho,Flatulento
+Nabo,Flatulento
+Nozes,Flatulento
+Ovo,Flatulento
+Pepino,Flatulento
+Pimentão,Flatulento
 Pimentas,Flatulento 
-Rabanete,Flatulento 
-Refrigerante,Flatulento 
-Repolho,Flatulento 
-Soja,Flatulento 
-Sorvete,Flatulento 
-Uvas Passas,Flatulento 
-Vagem,Flatulento 
+Rabanete,Flatulento
+Refrigerante,Flatulento
+Repolho,Flatulento
+Soja,Flatulento
+Sorvete,Flatulento
+Uvas Passas,Flatulento
+Vagem,Flatulento
 Abóbora,Funcional
 Alho,Funcional
 Azeite de Oliva,Funcional
@@ -77,7 +78,7 @@ Amendoim,Laxativo
 Ameixa,Laxativo
 Aspargo,Laxativo
 Beterraba,Laxativo
-Brócolis ,Laxativo
+Brócolis,Laxativo
 Cenoura crua,Laxativo
 Couve,Laxativo
 Creme de leite,Laxativo
@@ -96,9 +97,9 @@ Manga,Laxativo
 Maxixe,Laxativo
 Mel,Laxativo
 Melado,Laxativo
-Melão ,Laxativo
+Melão,Laxativo
 Milho,Laxativo
-Morango ,Laxativo
+Morango,Laxativo
 Nozes,Laxativo
 Óleos Vegetais,Laxativo
 Quiabo,Laxativo
@@ -134,7 +135,7 @@ Tapioca,Obstipante
 Torradas,Obstipante
 Abacate,Acido Fólico
 Abacaxi,Acido Fólico
-Agrião ,Acido Fólico
+Agrião,Acido Fólico
 Amêndoas,Acido Fólico
 Amendoim,Acido Fólico
 Aspargo,Acido Fólico
@@ -202,3 +203,369 @@ Sopa de tomate,Ácido Oxálico
 Sopa de vegetais,Ácido Oxálico
 Tangerina,Ácido Oxálico
 Uvas rosadas,Ácido Oxálico
+Abobrinha,Cálcio
+Agrião,Cálcio
+Alfafa,Cálcio
+Amêndoas,Cálcio
+Anchovas,Cálcio
+Badejo,Cálcio
+Beterraba,Cálcio
+Brócolis,Cálcio
+Chocolate ao leite,Cálcio
+Coalhada,Cálcio
+Corvina,Cálcio
+Couve,Cálcio
+Creme de leite,Cálcio
+Doce de leite,Cálcio
+Farinha de peixe,Cálcio
+Feijão branco,Cálcio
+Espinafre,Cálcio
+Iogurte,Cálcio
+Iogurte desnatado,Cálcio
+Leite desnatado,Cálcio
+Marisco,Cálcio
+Merluza,Cálcio
+Mingau,Cálcio
+Gema de Ovo,Cálcio
+Queijo parmesão,Cálcio
+Queijo minas,Cálcio
+Queijo prato,Cálcio
+Quiabo,Cálcio
+Rabanete,Cálcio
+Requeijão,Cálcio
+Ricota,Cálcio
+Salmão,Cálcio
+Sementes de girassol,Cálcio
+Sardinha em conserva,Cálcio
+Tofu,Cálcio
+Achocolatado,Colesterol
+Bacon,Colesterol
+Banha,Colesterol
+Biscoito recheado,Colesterol
+Caranguejo,Colesterol
+Caldo de carne,Colesterol
+Camarão,Colesterol
+Carnes gordas,Colesterol
+Coração,Colesterol
+Creme de leite,Colesterol
+Fígado,Colesterol
+Gema de ovo,Colesterol
+Iogurte integral,Colesterol
+Lagosta,Colesterol
+Leite integral,Colesterol
+Maionese,Colesterol
+Manteiga,Colesterol
+Miolo,Colesterol
+Molhos industrializados,Colesterol
+Ostra,Colesterol
+Pele de aves,Colesterol
+Presunto,Colesterol
+Queijos amarelos,Colesterol
+Queijo minas,Colesterol
+Requeijão,Colesterol
+Rim,Colesterol
+Salsicha,Colesterol
+Sardinha em conserva,Colesterol
+Sorvete,Colesterol
+Tortas ,Colesterol
+Toucinho,Colesterol
+Abacate,Potássio
+Abacaxi,Potássio
+Acelga,Potássio
+Aipo,Potássio
+Almeirão,Potássio
+Ameixa,Potássio
+Amêndoas,Potássio
+Amendoim,Potássio
+Amora,Potássio
+Aveia,Potássio
+Avelã,Potássio
+Banana prata,Potássio
+Banana d'agua,Potássio
+Batata,Potássio
+Batata doce,Potássio
+Beterraba,Potássio
+Brócolis,Potássio
+Cacau,Potássio
+Caldo de carne,Potássio
+Castanhas,Potássio
+Cenoura,Potássio
+Chá preto,Potássio
+Chicória,Potássio
+Chocolate,Potássio
+Couve,Potássio
+Couve-flor,Potássio
+Camarão seco,Potássio
+Damasco,Potássio
+Ervilha,Potássio
+Espinafre,Potássio
+Feijão,Potássio
+Figo,Potássio
+Frutas secas,Potássio
+Grão de bico,Potássio
+Laranja,Potássio
+Lentilha,Potássio
+Lima,Potássio
+Mamão,Potássio
+Mandioca,Potássio
+Mandioquinha,Potássio
+Maracujá,Potássio
+Melancia,Potássio
+Melão,Potássio
+Milho verde,Potássio
+Nozes,Potássio
+Palmito,Potássio
+Pão integral,Potássio
+Rabanete,Potássio
+Soja,Potássio
+Tamarindo,Potássio
+Tomate,Potássio
+Uva passa,Potássio
+Atum enlatado,Sódio
+Aspargo,Sódio
+Azeitona verde,Sódio
+Bacalhau,Sódio
+Bacon,Sódio
+Batata frita,Sódio
+Biscoito salgado,Sódio
+Caldos concentrados,Sódio
+Carne de sol,Sódio
+Charque,Sódio
+Chouriço,Sódio
+Ervilha enlatada,Sódio
+Extrato de tomate,Sódio
+Ketchup,Sódio
+Linguiça,Sódio
+Manteiga c/ sal,Sódio
+Margarina c/ sal,Sódio
+Milho enlatado,Sódio
+Molho inglês,Sódio
+Mortadela,Sódio
+Mostarda,Sódio
+Paio,Sódio
+Presunto,Sódio
+Queijos,Sódio
+Salame,Sódio
+Sardinha,Sódio
+Salsicha,Sódio
+Salgadinhos,Sódio
+Sardinha enlatada,Sódio
+Shoyu,Sódio
+Sopas prontas,Sódio
+Palmito em conserva,Sódio
+Patês industrializados,Sódio
+Picles,Sódio
+Requeijão,Sódio
+Temperos industrializados,Sódio
+Toucinho,Sódio
+Acelga,Enxofre
+Agrião,Enxofre
+Aipo,Enxofre
+Brócolis,Enxofre
+Caruru,Enxofre
+Chicória,Enxofre
+Carne,Enxofre
+Couve,Enxofre
+Couve-flor,Enxofre
+Cebola,Enxofre
+Escarola,Enxofre
+Espinafre,Enxofre
+Feijão preto,Enxofre
+Grão de bico,Enxofre
+Leite de milho,Enxofre
+Mostarda,Enxofre
+Nabo,Enxofre
+Pimentão,Enxofre
+Rabanete,Enxofre
+Repolho,Enxofre
+Ovo,Enxofre
+Açaí,Ferro
+Açúcar mascavo,Ferro
+Agrião,Ferro
+Ameixa seca,Ferro
+Amêndoas,Ferro
+Aveia,Ferro
+Banana passa,Ferro
+Bertalha,Ferro
+Beterraba,Ferro
+Brócolis,Ferro
+Carne,Ferro
+Castanha de caju,Ferro
+Couve,Ferro
+Damasco,Ferro
+Ervilha,Ferro
+Espinafre,Ferro
+Melado,Ferro
+Feijão,Ferro
+Fígado,Ferro
+Gema de ovo,Ferro
+Inhame,Ferro
+Jenipapo,Ferro
+Jiló,Ferro
+Lentilha,Ferro
+Maçã,Ferro
+Marisco,Ferro
+Morango,Ferro
+Mostarda,Ferro
+Nozes,Ferro
+Ostra,Ferro
+Pão Integral,Ferro
+Pêra,Ferro
+Pólen,Ferro
+Quiabo,Ferro
+Rabanete,Ferro
+Rapadura,Ferro
+Repolho,Ferro
+Rim,Ferro
+Salsa,Ferro
+Sardinha,Ferro
+Sementes de abóbora,Ferro
+Sementes de gergelim,Ferro
+Uva Passa,Ferro
+Sementes de girassol,Ferro
+Tâmara,Ferro
+Abóbora,Fibras
+Acelga,Fibras
+Alcachofra,Fibras
+Agrião,Fibras
+Ameixa,Fibras
+Amêndoas,Fibras
+Amendoim,Fibras
+Amora preta,Fibras
+Arroz integral,Fibras
+Aveia,Fibras
+Avelã,Fibras
+Banana,Fibras
+Beterraba,Fibras
+Biscoito integral,Fibras
+Brócolis,Fibras
+Castanhas secas,Fibras
+Cenoura,Fibras
+Cereais matinais,Fibras
+Couve,Fibras
+Couve-flor,Fibras
+Coco seco,Fibras
+Damasco,Fibras
+Ervilha,Fibras
+Espinafre,Fibras
+Farinha de arroz,Fibras
+Farinha de aveia,Fibras
+Farelo de trigo,Fibras
+Feijões,Fibras
+Figo seco,Fibras
+Framboesa,Fibras
+Germe de trigo,Fibras
+Goiaba,Fibras
+Grão de bico,Fibras
+Jaca,Fibras
+Jenipapo,Fibras
+Laranja,Fibras
+Lentilha,Fibras
+Linhaça,Fibras
+Maçã,Fibras
+Milho,Fibras
+Nozes,Fibras
+Pão integral,Fibras
+Pêra seca,Fibras
+Quiabo,Fibras
+Repolho,Fibras
+Soja,Fibras
+Tamarindo,Fibras
+Vagem,Fibras
+Sementes de gergelim,Fibras
+Amêndoas,Fósforo
+Amendoim,Fósforo
+Anchova,Fósforo
+Arenque,Fósforo
+Aveia,Fósforo
+Avelã,Fósforo
+Bacalhau,Fósforo
+Cacau em pó,Fósforo
+Café solúvel,Fósforo
+Camarão,Fósforo
+Carnes,Fósforo
+Castanhas,Fósforo
+Centeio,Fósforo
+Cereais,Fósforo
+Chás,Fósforo
+Corvina,Fósforo
+Couve,Fósforo
+Ervilha seca,Fósforo
+Farinha de aveia,Fósforo
+Farinha de peixe,Fósforo
+Farinha de soja,Fósforo
+Farelo de trigo,Fósforo
+Feijões,Fósforo
+Fígado,Fósforo
+Frango,Fósforo
+Gema de ovo,Fósforo
+Germe de trigo,Fósforo
+Leite,Fósforo
+Lentilha,Fósforo
+Nozes,Fósforo
+Ovas de peixe,Fósforo
+Pão integral,Fósforo
+Peixes,Fósforo
+Sementes de abóbora,Fósforo
+Queijos,Fósforo
+Requeijão,Fósforo
+Sementes de girassol,Fósforo
+Tofu,Fósforo
+Abóbora,Beta-Caroteno
+Açafrão,Beta-Caroteno
+Batata doce,Beta-Caroteno
+Brócolis,Beta-Caroteno
+Cenoura,Beta-Caroteno
+Couve,Beta-Caroteno
+Damasco seco,Beta-Caroteno
+Espinafre,Beta-Caroteno
+Fígado,Beta-Caroteno
+Mamão,Beta-Caroteno
+Manga,Beta-Caroteno
+Melão,Beta-Caroteno
+Ovo,Beta-Caroteno
+Pimentão amarelo,Beta-Caroteno
+Pimentão Vermelho,Beta-Caroteno
+Pêssego,Beta-Caroteno
+Abacaxi,Vitamina C
+Acerola,Vitamina C
+Agrião,Vitamina C
+Brócolis,Vitamina C
+Caju,Vitamina C
+Couve,Vitamina C
+Escarola,Vitamina C
+Espinafre,Vitamina C
+Goiaba,Vitamina C
+Kiwi,Vitamina C
+Laranja,Vitamina C
+Limão,Vitamina C
+Manga,Vitamina C
+Melão,Vitamina C
+Morango,Vitamina C
+Pimentão,Vitamina C
+Repolho,Vitamina C
+Tomate,Vitamina C
+Umbu,Vitamina C
+Abacate,Vitamina E
+Amêndoas,Vitamina E
+Avelã,Vitamina E
+Castanhas,Vitamina E
+Cereais integrais,Vitamina E
+Gema de ovo,Vitamina E
+Gérmen de trigo,Vitamina E
+Leite,Vitamina E
+Nozes,Vitamina E
+Óleos vegetais,Vitamina E
+Vegetais Folhosos,Vitamina E
+Batata frita,Gordura Trans
+Biscoito cream craker,Gordura Trans
+Biscoito recheado,Gordura Trans
+Bolos industrializados,Gordura Trans
+Caldo de carne em cubos,Gordura Trans
+Folhados,Gordura Trans
+Margarinas,Gordura Trans
+Salgadinhos industrializados,Gordura Trans
+Sorvete,Gordura Trans
+Tortas,Gordura Trans
+Produtos de confeitaria,Gordura Trans
+Produtos de panificação,Gordura Trans
