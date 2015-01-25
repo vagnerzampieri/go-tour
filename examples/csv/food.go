@@ -4,6 +4,7 @@ import (
 	"encoding/csv"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -25,12 +26,18 @@ func main() {
 		//fmt.Printf("perTypes\n", perTypes)
 	}
 
-	for k, vs := range food {
-		var str string
+	for typ, names := range perTypes {
+		fmt.Println(typ, "<br />")
+		fmt.Println("<tr valign=\"top\">")
 
-		str = strings.Join(vs, ", ")
+		for _, n := range names {
+			str := strings.Join(food[n], ", ")
 
-		fmt.Printf("<td alt=\"%s\" style=\"border-bottom: 1px solid #000000; border-left: 1px solid #0000 border-right: none; border-top: 1px solid #000000; cursor: pointer; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in; padding-top: 0.04in;\" title=\"%s\" width=\"14%%\">%s</td>\n", str, str, k)
+			fmt.Printf("<td alt=\"%s\" style=\"border-bottom: 1px solid #000000; border-left: 1px solid #0000 border-right: none; border-top: 1px solid #000000; cursor: pointer; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in; padding-top: 0.04in;\" title=\"%s\" width=\"14%%\">%s</td>\n", str, str, n)
+		}
+
+		fmt.Println("</tr>")
 	}
-	fmt.Println(food)
+
+	//fmt.Println(food)
 }
