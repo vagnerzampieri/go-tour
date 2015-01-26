@@ -27,16 +27,24 @@ func main() {
 	}
 
 	for typ, names := range perTypes {
+		fmt.Println("<table><tbody>")
 		fmt.Println(typ, "<br />")
-		fmt.Println("<tr valign=\"top\">")
-
-		for _, n := range names {
+		for i, n := range names {
 			str := strings.Join(food[n], ", ")
 
-			fmt.Printf("<td alt=\"%s\" style=\"border-bottom: 1px solid #000000; border-left: 1px solid #0000 border-right: none; border-top: 1px solid #000000; cursor: pointer; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in; padding-top: 0.04in;\" title=\"%s\" width=\"14%%\">%s</td>\n", str, str, n)
+			if i == 0 {
+				fmt.Println("<tr>")
+				fmt.Printf("<td alt=\"%s\" style=\"border: 1px solid #000000; cursor: pointer; padding: 0.04in;\" title=\"%s\" width=\"14%%\">%s</td>\n", str, str, n)
+			} else if (i+1) == len(names) || (i+1)%3 == 0 {
+				fmt.Printf("<td alt=\"%s\" style=\"border: 1px solid #000000; cursor: pointer; padding: 0.04in;\" title=\"%s\" width=\"14%%\">%s</td>\n", str, str, n)
+				fmt.Println("</tr>")
+				fmt.Println("<tr>")
+			} else {
+				fmt.Printf("<td alt=\"%s\" style=\"border: 1px solid #000000; cursor: pointer; padding: 0.04in;\" title=\"%s\" width=\"14%%\">%s</td>\n", str, str, n)
+			}
+			//fmt.Println(i, str)
 		}
-
-		fmt.Println("</tr>")
+		fmt.Println("</table></tbody>")
 	}
 
 	//fmt.Println(food)
