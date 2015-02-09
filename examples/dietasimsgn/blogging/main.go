@@ -17,6 +17,7 @@ ingredients: {{.Ingredients}}
 method_of_preparation: {{.MethodOfPreparation}}
 example_combinations: {{.ExampleCombinations}}
 can_be_used_in_cooking: {{.CanBeUsedInCooking}}
+with_chron: {{.WithChron}}
 `
 
 const html = `
@@ -37,31 +38,25 @@ Tempo de preparo: {{.PreparationTime}}&nbsp; Tempo de cozimento: {{.CookingTime}
 Rendimento: {{.FoodYield}}<br />
 <br />
 <ul>
-<li>1 xícara de chá de água</li>
-<li>1 ovo </li>
-<li>1 gema (para pincelar)</li>
-<li>3 colheres de sopa de açúcar</li>
-<li>2 colheres de sopa de azeite para cozinhar (não deve ser extra virgem)</li>
-<li>30 g ou 2 tabletes de fermento biológico ou de padaria</li>
-<li>1 colher de chá de sal</li>
-<li>2 colheres de sopa de gergelim</li>
-<li>2 xícaras de farinha de trigo integral (aproximadamente)</li>
-<li>2 xícaras farinha de trigo branca</li>
-<li>(pode fazer todo o processo com uma única farinha, eu uso 2 pois prefiro fazer um integral e uma comum)</li>
+{{ range $key, $value := .Ingredients }}
+<li>{{$value}}</li>
+{{ end }}
 </ul>
 <br />
-Bata no mix ou liquidificador, todos os ingredientes exceto as farinhas e o gergelim (Passo 3)<br />
-Despeje METADE do líquido em uma vasilha, junte o gergelim e a farinha de trigo integral aos poucos e amasse bem, até que a massa fique lisa e homogênea. (passo 4)<br />
-Deixe descansar por 30 minutos<br />
-Aqueça o forno com temperatura de 200ºC<br />
-Despeje o restante do líquido em uma vasilha, junte a farinha de trigo branca aos poucos e amasse bem, até que a massa fique lisa e homogênea. (Passo 5)<br />
-Deixe descansar por 30 minutos<br />
-Abra a primeira massa com o auxílio de um rolo em superfície enfarinhada, recheie, enrole o pão e pincele 1 gema (passo 6)<br />
-Abra a segunda massa com o auxílio de um rolo em superfície enfarinhada, recheie, enrole o pão e pincele 1 gema. (passo 10)<br />
-coloque as massas em uma assadeira (nesse caso, cortei em fatias e coloquei na forma de cupcakes para ficar rústico) e asse por aproximadamente 30 minutos.<br />
+{{ range $key, $value := .MethodOfPreparation }}
+{{ $value }}<br />
+{{ end }}
 <br />
 Exemplo para combinações: {{.ExampleCombinations}}<br />
 <br />
+{{if .CanBeUsedInCooking}}
+Essa receita, pode ser usada (com algumas restrições) para caldos (geralmente em preparo de alguns exames)<br />
+<br />
+{{end}}
+{{if .WithChron}}
+<b>Essa receita deve ser usada com moderação para pacientes com Crohn. Uso não recomendado para quem está com o Crohn em atividade.</b>
+<br />
+{{end}}
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://4.bp.blogspot.com/-rusL2wh86mk/VM2SSF9GJLI/AAAAAAAAAO0/E3oZeWvjUsU/s1600/pao%2Brecheado%2Bfinal.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-rusL2wh86mk/VM2SSF9GJLI/AAAAAAAAAO0/E3oZeWvjUsU/s1600/pao%2Brecheado%2Bfinal.jpg" height="120" width="320" /></a></div>
 <br />
@@ -76,10 +71,23 @@ type Blogging struct {
 	PreparationTime,
 	CookingTime,
 	FoodYield,
+	ExampleCombinations string
 	Ingredients,
-	MethodOfPreparation,
-	ExampleCombinations,
-	CanBeUsedInCooking string
+	MethodOfPreparation []string
+	CanBeUsedInCooking,
+	WithChron bool
+}
+
+func checkIfTrue(field string) bool {
+	if field == "true" {
+		return true
+	}
+	return false
+}
+
+func splitSemicolon(str string) []string {
+	s := strings.Split(str, "\n")[0]
+	return strings.Split(s, ";")
 }
 
 func main() {
@@ -110,19 +118,23 @@ func main() {
 
 	fmt.Println("Ingredientes: ")
 	ingredients, _ := reader.ReadString('\n')
-	blogging.Ingredients = strings.Split(ingredients, "\n")[0]
+	blogging.Ingredients = append(blogging.Ingredients, splitSemicolon(ingredients)...)
 
 	fmt.Println("Modo de preparo: ")
 	methodOfPreparation, _ := reader.ReadString('\n')
-	blogging.MethodOfPreparation = strings.Split(methodOfPreparation, "\n")[0]
+	blogging.MethodOfPreparation = append(blogging.MethodOfPreparation, splitSemicolon(methodOfPreparation)...)
 
 	fmt.Println("Exemplo para combinações: ")
 	exampleCombinations, _ := reader.ReadString('\n')
 	blogging.ExampleCombinations = strings.Split(exampleCombinations, "\n")[0]
 
-	fmt.Println("Pode ser usado no preparo?: ")
+	fmt.Println("Pode ser usado no preparo?(true ou false): ")
 	canBeUsedInCooking, _ := reader.ReadString('\n')
-	blogging.CanBeUsedInCooking = strings.Split(canBeUsedInCooking, "\n")[0]
+	blogging.CanBeUsedInCooking = checkIfTrue(strings.Split(canBeUsedInCooking, "\n")[0])
+
+	fmt.Println("Para pacientes com chron?(true ou false): ")
+	withChron, _ := reader.ReadString('\n')
+	blogging.WithChron = checkIfTrue(strings.Split(withChron, "\n")[0])
 
 	tYaml := template.Must(template.New("yaml").Parse(yaml))
 	outputYaml, err := os.Create(blogging.Filename)
