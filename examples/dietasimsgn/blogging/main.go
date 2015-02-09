@@ -19,7 +19,6 @@ example_combinations: {{.ExampleCombinations}}
 can_be_used_in_cooking: {{.CanBeUsedInCooking}}
 `
 
-/*
 const html = `
 <div align="justify" class="western">
 <div class="separator" style="clear: both; text-align: center;">
@@ -34,8 +33,8 @@ const html = `
 <br />
 Dificuldade: {{.Difficulty}}<br />
 <br />
-Tempo de preparo: 20 minutos&nbsp; Tempo de cozimento: 30 minutos<br />
-Rendimento: 2 pães<br />
+Tempo de preparo: {{.PreparationTime}}&nbsp; Tempo de cozimento: {{.CookingTime}}<br />
+Rendimento: {{.FoodYield}}<br />
 <br />
 <ul>
 <li>1 xícara de chá de água</li>
@@ -61,7 +60,7 @@ Abra a primeira massa com o auxílio de um rolo em superfície enfarinhada, rech
 Abra a segunda massa com o auxílio de um rolo em superfície enfarinhada, recheie, enrole o pão e pincele 1 gema. (passo 10)<br />
 coloque as massas em uma assadeira (nesse caso, cortei em fatias e coloquei na forma de cupcakes para ficar rústico) e asse por aproximadamente 30 minutos.<br />
 <br />
-Exemplo para combinações: Recheio de carne, Recheio de ricota, recheio de frango, marguerita, queijo cottage, minas curado, mussarela de búfala com tomates.<br />
+Exemplo para combinações: {{.ExampleCombinations}}<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://4.bp.blogspot.com/-rusL2wh86mk/VM2SSF9GJLI/AAAAAAAAAO0/E3oZeWvjUsU/s1600/pao%2Brecheado%2Bfinal.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-rusL2wh86mk/VM2SSF9GJLI/AAAAAAAAAO0/E3oZeWvjUsU/s1600/pao%2Brecheado%2Bfinal.jpg" height="120" width="320" /></a></div>
@@ -70,7 +69,7 @@ Exemplo para combinações: Recheio de carne, Recheio de ricota, recheio de fran
 *A ideia de cardápio pode variar e deve ser tratado de acordo com seus hábitos e preferências.<br />
 Caso haja alguma restrição médica, sugiro ler <a href="http://dietasimsgn.blogspot.com.br/search/label/Propriedades%20Nutricionais">Propriedades Nutricionais</a> e <a href="http://dietasimsgn.blogspot.com.br/p/blog-page.html">tabela de substituições</a> dos alimentos.</div>
 `
-*/
+
 type Blogging struct {
 	Filename,
 	Difficulty,
@@ -88,61 +87,76 @@ func main() {
 	var blogging Blogging
 
 	fmt.Println("Título do arquivo: ")
-	yamlFilename, _ := reader.ReadString('\n')
-	yamlFilename = strings.Split(yamlFilename, "\n")[0]
+	filename, _ := reader.ReadString('\n')
+	yamlFilename := strings.Split(filename, "\n")[0]
 	yamlF := []string{yamlFilename, ".yml"}
 	blogging.Filename = strings.Join(yamlF, "")
 
 	fmt.Println("Dificuldade: ")
 	difficulty, _ := reader.ReadString('\n')
-	difficulty = strings.Split(difficulty, "\n")[0]
-	blogging.Difficulty = difficulty
+	blogging.Difficulty = strings.Split(difficulty, "\n")[0]
 
-	fmt.Println(blogging.Filename)
-	fmt.Println(blogging.Difficulty)
-	/*
-		fmt.Println("Tempo de preparo: ")
-		preparationTime, _ := reader.ReadString('\n')
-		fmt.Println(preparationTime)
+	fmt.Println("Tempo de preparo: ")
+	preparationTime, _ := reader.ReadString('\n')
+	blogging.PreparationTime = strings.Split(preparationTime, "\n")[0]
 
-		fmt.Println("Tempo de cozimento: ")
-		cookingTime, _ := reader.ReadString('\n')
-		fmt.Println(cookingTime)
+	fmt.Println("Tempo de cozimento: ")
+	cookingTime, _ := reader.ReadString('\n')
+	blogging.CookingTime = strings.Split(cookingTime, "\n")[0]
 
-		fmt.Println("Rendimento: ")
-		foodYield, _ := reader.ReadString('\n')
-		fmt.Println(foodYield)
+	fmt.Println("Rendimento: ")
+	foodYield, _ := reader.ReadString('\n')
+	blogging.FoodYield = strings.Split(foodYield, "\n")[0]
 
-		fmt.Println("Ingredientes: ")
-		ingredients, _ := reader.ReadString('\n')
-		fmt.Println(ingredients)
+	fmt.Println("Ingredientes: ")
+	ingredients, _ := reader.ReadString('\n')
+	blogging.Ingredients = strings.Split(ingredients, "\n")[0]
 
-		fmt.Println("Modo de preparo: ")
-		methodOfPreparation, _ := reader.ReadString('\n')
-		fmt.Println(methodOfPreparation)
+	fmt.Println("Modo de preparo: ")
+	methodOfPreparation, _ := reader.ReadString('\n')
+	blogging.MethodOfPreparation = strings.Split(methodOfPreparation, "\n")[0]
 
-		fmt.Println("Exemplo para combinações: ")
-		exampleCombinations, _ := reader.ReadString('\n')
-		fmt.Println(exampleCombinations)
+	fmt.Println("Exemplo para combinações: ")
+	exampleCombinations, _ := reader.ReadString('\n')
+	blogging.ExampleCombinations = strings.Split(exampleCombinations, "\n")[0]
 
-		fmt.Println("Pode ser usado no preparo?: ")
-		canBeUsedInCooking, _ := reader.ReadString('\n')
-		fmt.Println(canBeUsedInCooking)
-	*/
-	t := template.Must(template.New("yaml").Parse(yaml))
-	output, err := os.Create(blogging.Filename)
+	fmt.Println("Pode ser usado no preparo?: ")
+	canBeUsedInCooking, _ := reader.ReadString('\n')
+	blogging.CanBeUsedInCooking = strings.Split(canBeUsedInCooking, "\n")[0]
+
+	tYaml := template.Must(template.New("yaml").Parse(yaml))
+	outputYaml, err := os.Create(blogging.Filename)
 	if err != nil {
 		panic(err)
 	}
 
 	defer func() {
-		if err := output.Close(); err != nil {
+		if err := outputYaml.Close(); err != nil {
 			panic(err)
 		}
 	}()
 
-	if err := t.Execute(output, blogging); err != nil {
+	if err := tYaml.Execute(outputYaml, blogging); err != nil {
 		panic(err)
 	}
 
+	htmlFilename := strings.Split(filename, "\n")[0]
+	htmlF := []string{htmlFilename, ".html"}
+	blogging.Filename = strings.Join(htmlF, "")
+
+	tHtml := template.Must(template.New("html").Parse(html))
+	outputHml, err := os.Create(blogging.Filename)
+	if err != nil {
+		panic(err)
+	}
+
+	defer func() {
+		if err := outputHml.Close(); err != nil {
+			panic(err)
+		}
+	}()
+
+	if err := tHtml.Execute(outputHml, blogging); err != nil {
+		panic(err)
+	}
 }
