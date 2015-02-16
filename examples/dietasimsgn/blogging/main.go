@@ -81,9 +81,18 @@ func checkIfTrue(field string) bool {
 	return false
 }
 
-func splitSemicolon(str string) []string {
-	s := strings.Split(str, "\n")[0]
-	return strings.Split(s, ";")
+func splitSemicolon(str string) (text []string) {
+	ss := strings.Split(str, "\n")[0]
+	for _, s := range strings.Split(ss, ";") {
+		var strs []string
+		for _, st := range strings.Split(s, " ") {
+			if st != "" {
+				strs = append(strs, st)
+			}
+		}
+		text = append(text, strings.Join(strs, " "))
+	}
+	return
 }
 
 func main() {
