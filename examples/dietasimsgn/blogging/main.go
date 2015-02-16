@@ -22,8 +22,6 @@ with_chron: {{.WithChron}}
 
 const html = `
 <div align="justify" class="western">
-<div class="separator" style="clear: both; text-align: center;">
-<a href="http://4.bp.blogspot.com/-qTF7Afr_VlM/VM36cKt0vmI/AAAAAAAAAPE/kErLM33-Yg4/s1600/paes%2Brecheados%2Bvertical.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-qTF7Afr_VlM/VM36cKt0vmI/AAAAAAAAAPE/kErLM33-Yg4/s1600/paes%2Brecheados%2Bvertical.jpg" height="320" width="305" /></a></div>
 <br />
 <div class="separator" style="clear: both; text-align: center;">
 </div>
@@ -36,6 +34,7 @@ Dificuldade: {{.Difficulty}}<br />
 <br />
 Tempo de preparo: {{.PreparationTime}}&nbsp; Tempo de cozimento: {{.CookingTime}}<br />
 Rendimento: {{.FoodYield}}<br />
+<!--more-->
 <br />
 <ul>
 {{ range $key, $value := .Ingredients }}
@@ -57,9 +56,6 @@ Essa receita, pode ser usada (com algumas restrições) para caldos (geralmente 
 <b>Essa receita deve ser usada com moderação para pacientes com Crohn. Uso não recomendado para quem está com o Crohn em atividade.</b>
 <br />
 {{end}}
-<div class="separator" style="clear: both; text-align: center;">
-<a href="http://4.bp.blogspot.com/-rusL2wh86mk/VM2SSF9GJLI/AAAAAAAAAO0/E3oZeWvjUsU/s1600/pao%2Brecheado%2Bfinal.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-rusL2wh86mk/VM2SSF9GJLI/AAAAAAAAAO0/E3oZeWvjUsU/s1600/pao%2Brecheado%2Bfinal.jpg" height="120" width="320" /></a></div>
-<br />
 <br />
 *A ideia de cardápio pode variar e deve ser tratado de acordo com seus hábitos e preferências.<br />
 Caso haja alguma restrição médica, sugiro ler <a href="http://dietasimsgn.blogspot.com.br/search/label/Propriedades%20Nutricionais">Propriedades Nutricionais</a> e <a href="http://dietasimsgn.blogspot.com.br/p/blog-page.html">tabela de substituições</a> dos alimentos.</div>
