@@ -61,6 +61,8 @@ Essa receita, pode ser usada (com algumas restrições) para caldos (geralmente 
 Caso haja alguma restrição médica, sugiro ler <a href="http://dietasimsgn.blogspot.com.br/search/label/Propriedades%20Nutricionais">Propriedades Nutricionais</a> e <a href="http://dietasimsgn.blogspot.com.br/p/blog-page.html">tabela de substituições</a> dos alimentos.</div>
 `
 
+const EOL = '\n'
+
 type Blogging struct {
 	Filename,
 	Difficulty,
@@ -82,7 +84,7 @@ func checkIfTrue(field string) bool {
 }
 
 func splitSemicolon(str string) (text []string) {
-	ss := strings.Split(str, "\n")[0]
+	ss := strings.Split(str, "\r\n")[0]
 	for _, s := range strings.Split(ss, ";") {
 		var strs []string
 		for _, st := range strings.Split(s, " ") {
@@ -100,46 +102,46 @@ func main() {
 	var blogging Blogging
 
 	fmt.Println("Título do arquivo: ")
-	filename, _ := reader.ReadString('\n')
-	yamlFilename := strings.Split(filename, "\n")[0]
+	filename, _ := reader.ReadString(EOL)
+	yamlFilename := strings.Split(filename, "\r\n")[0]
 	yamlF := []string{yamlFilename, ".yml"}
 	blogging.Filename = strings.Join(yamlF, "")
 
 	fmt.Println("Dificuldade: ")
-	difficulty, _ := reader.ReadString('\n')
-	blogging.Difficulty = strings.Split(difficulty, "\n")[0]
+	difficulty, _ := reader.ReadString(EOL)
+	blogging.Difficulty = strings.Split(difficulty, "\r\n")[0]
 
 	fmt.Println("Tempo de preparo: ")
-	preparationTime, _ := reader.ReadString('\n')
-	blogging.PreparationTime = strings.Split(preparationTime, "\n")[0]
+	preparationTime, _ := reader.ReadString(EOL)
+	blogging.PreparationTime = strings.Split(preparationTime, "\r\n")[0]
 
 	fmt.Println("Tempo de cozimento: ")
-	cookingTime, _ := reader.ReadString('\n')
-	blogging.CookingTime = strings.Split(cookingTime, "\n")[0]
+	cookingTime, _ := reader.ReadString(EOL)
+	blogging.CookingTime = strings.Split(cookingTime, "\r\n")[0]
 
 	fmt.Println("Rendimento: ")
-	foodYield, _ := reader.ReadString('\n')
-	blogging.FoodYield = strings.Split(foodYield, "\n")[0]
+	foodYield, _ := reader.ReadString(EOL)
+	blogging.FoodYield = strings.Split(foodYield, "\r\n")[0]
 
 	fmt.Println("Ingredientes: ")
-	ingredients, _ := reader.ReadString('\n')
+	ingredients, _ := reader.ReadString(EOL)
 	blogging.Ingredients = append(blogging.Ingredients, splitSemicolon(ingredients)...)
 
 	fmt.Println("Modo de preparo: ")
-	methodOfPreparation, _ := reader.ReadString('\n')
+	methodOfPreparation, _ := reader.ReadString(EOL)
 	blogging.MethodOfPreparation = append(blogging.MethodOfPreparation, splitSemicolon(methodOfPreparation)...)
 
 	fmt.Println("Exemplo para combinações: ")
-	exampleCombinations, _ := reader.ReadString('\n')
-	blogging.ExampleCombinations = strings.Split(exampleCombinations, "\n")[0]
+	exampleCombinations, _ := reader.ReadString(EOL)
+	blogging.ExampleCombinations = strings.Split(exampleCombinations, "\r\n")[0]
 
 	fmt.Println("Pode ser usado no preparo?(true ou false): ")
-	canBeUsedInCooking, _ := reader.ReadString('\n')
-	blogging.CanBeUsedInCooking = checkIfTrue(strings.Split(canBeUsedInCooking, "\n")[0])
+	canBeUsedInCooking, _ := reader.ReadString(EOL)
+	blogging.CanBeUsedInCooking = checkIfTrue(strings.Split(canBeUsedInCooking, "\r\n")[0])
 
 	fmt.Println("Para pacientes com chron?(true ou false): ")
-	withChron, _ := reader.ReadString('\n')
-	blogging.WithChron = checkIfTrue(strings.Split(withChron, "\n")[0])
+	withChron, _ := reader.ReadString(EOL)
+	blogging.WithChron = checkIfTrue(strings.Split(withChron, "\r\n")[0])
 
 	tYaml := template.Must(template.New("yaml").Parse(yaml))
 	outputYaml, err := os.Create(blogging.Filename)
@@ -157,7 +159,7 @@ func main() {
 		panic(err)
 	}
 
-	htmlFilename := strings.Split(filename, "\n")[0]
+	htmlFilename := strings.Split(filename, "\r\n")[0]
 	htmlF := []string{htmlFilename, ".html"}
 	blogging.Filename = strings.Join(htmlF, "")
 
