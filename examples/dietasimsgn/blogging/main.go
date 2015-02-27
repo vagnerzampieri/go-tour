@@ -58,7 +58,7 @@ Essa receita, pode ser usada (com algumas restrições) para caldos (geralmente 
 {{end}}
 <br />
 *A ideia de cardápio pode variar e deve ser tratado de acordo com seus hábitos e preferências.<br />
-Caso haja alguma restrição médica, sugiro ler <a href="http://dietasimsgn.blogspot.com.br/search/label/Propriedades%20Nutricionais">Propriedades Nutricionais</a> e <a href="http://dietasimsgn.blogspot.com.br/p/blog-page.html">tabela de substituições</a> dos alimentos.</div>
+Caso haja alguma restrição médica, sugiro ler <a href="http://dietasimsemgracanunca.com.br/tag/propriedades-nutricionais/">Propriedades Nutricionais</a> e <a href="http://dietasimsemgracanunca.com.br/tabela-de-substituicoes/">tabela de substituições</a> dos alimentos.</div>
 `
 
 const EOL = '\n'
