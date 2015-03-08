@@ -9,7 +9,6 @@ import (
 )
 
 const yaml = `
-subtitle: {{.Subtitle}}
 difficulty: {{.Difficulty}}
 preparation_time: {{.PreparationTime}}
 cooking_time: {{.CookingTime}}
@@ -27,7 +26,6 @@ const html = `
 <br />
 <div class="separator" style="clear: both; text-align: center;">
 </div>
-<h2>{{.Subtitle}}</h2>
 <div class="separator" style="clear: both; text-align: center;">
 </div>
 <div class="separator" style="clear: both; text-align: center;">
@@ -72,7 +70,6 @@ const EOL = '\n'
 
 type Blogging struct {
 	Filename,
-	Subtitle,
 	Difficulty,
 	PreparationTime,
 	CookingTime,
@@ -115,10 +112,6 @@ func main() {
 	yamlFilename := strings.Split(filename, "\r\n")[0]
 	yamlF := []string{yamlFilename, ".yml"}
 	blogging.Filename = strings.Join(yamlF, "")
-
-	fmt.Println("Sub título: ")
-	subtitle, _ := reader.ReadString(EOL)
-	blogging.Subtitle = strings.Split(subtitle, "\r\n")[0]
 
 	fmt.Println("Dificuldade: ")
 	difficulty, _ := reader.ReadString(EOL)
