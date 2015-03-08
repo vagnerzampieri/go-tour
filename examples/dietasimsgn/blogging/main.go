@@ -16,6 +16,7 @@ cooking_time: {{.CookingTime}}
 food_yield: {{.FoodYield}}
 ingredients: {{.Ingredients}}
 method_of_preparation: {{.MethodOfPreparation}}
+observation: {{.Observation}}
 example_combinations: {{.ExampleCombinations}}
 can_be_used_in_cooking: {{.CanBeUsedInCooking}}
 with_chron: {{.WithChron}}
