@@ -9,6 +9,7 @@ import (
 )
 
 const yaml = `
+subtitle: {{.Subtitle}}
 difficulty: {{.Difficulty}}
 preparation_time: {{.PreparationTime}}
 cooking_time: {{.CookingTime}}
@@ -25,6 +26,7 @@ const html = `
 <br />
 <div class="separator" style="clear: both; text-align: center;">
 </div>
+<h2>{{.Subtitle}}</h2>
 <div class="separator" style="clear: both; text-align: center;">
 </div>
 <div class="separator" style="clear: both; text-align: center;">
@@ -43,6 +45,10 @@ Rendimento: {{.FoodYield}}<br />
 </ul>
 <br />
 {{ range $key, $value := .MethodOfPreparation }}
+{{ $value }}<br />
+{{ end }}
+<br />
+Observações: {{ range $key, $value := .Observation }}
 {{ $value }}<br />
 {{ end }}
 <br />
@@ -65,13 +71,15 @@ const EOL = '\n'
 
 type Blogging struct {
 	Filename,
+	Subtitle,
 	Difficulty,
 	PreparationTime,
 	CookingTime,
 	FoodYield,
 	ExampleCombinations string
 	Ingredients,
-	MethodOfPreparation []string
+	MethodOfPreparation,
+	Observation []string
 	CanBeUsedInCooking,
 	WithChron bool
 }
@@ -107,6 +115,10 @@ func main() {
 	yamlF := []string{yamlFilename, ".yml"}
 	blogging.Filename = strings.Join(yamlF, "")
 
+	fmt.Println("Sub título: ")
+	subtitle, _ := reader.ReadString(EOL)
+	blogging.Subtitle = strings.Split(subtitle, "\r\n")[0]
+
 	fmt.Println("Dificuldade: ")
 	difficulty, _ := reader.ReadString(EOL)
 	blogging.Difficulty = strings.Split(difficulty, "\r\n")[0]
@@ -130,6 +142,10 @@ func main() {
 	fmt.Println("Modo de preparo: ")
 	methodOfPreparation, _ := reader.ReadString(EOL)
 	blogging.MethodOfPreparation = append(blogging.MethodOfPreparation, splitSemicolon(methodOfPreparation)...)
+
+	fmt.Println("Observações: ")
+	observation, _ := reader.ReadString(EOL)
+	blogging.Observation = append(blogging.Observation, splitSemicolon(observation)...)
 
 	fmt.Println("Exemplo para combinações: ")
 	exampleCombinations, _ := reader.ReadString(EOL)
